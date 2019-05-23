@@ -40,9 +40,7 @@ all_list = fish_list + ebikani_list + ika_list + kai_list
 # Flaskクラスのインスタンスを作成
 # __name__は現在のファイルのモジュール名
 api = Flask(__name__)
-SAVE_DIR = "./images"
-if not os.path.isdir(SAVE_DIR):
-    os.mkdir(SAVE_DIR)
+
 
 # GETの実装
 @api.route('/get', methods=['GET'])
@@ -54,7 +52,6 @@ def upload():
     if request.files and 'image' in request.files:
         img = request.files['image'].read()
         img = Image.open(io.BytesIO(img))
-        img.save("./images/test.jpg")
         img = img.resize((256,144))
         img_array = np.array(img)
         
@@ -81,4 +78,5 @@ def not_found(error):
 # ファイルをスクリプトとして実行した際に
 # ホスト0.0.0.0, ポート3001番でサーバーを起動
 if __name__ == '__main__':
+    api.debug = True
     api.run()
