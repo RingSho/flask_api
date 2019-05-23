@@ -9,6 +9,7 @@ Created on Wed May 22 17:40:50 2019
 # 必要なモジュールの読み込み
 from flask import Flask, jsonify, make_response, request
 import numpy as np
+import os
 from PIL import Image
 import models
 import io
