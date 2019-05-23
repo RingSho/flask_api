@@ -41,22 +41,6 @@ all_list = fish_list + ebikani_list + ika_list + kai_list
 # __name__は現在のファイルのモジュール名
 api = Flask(__name__)
 
-import tensorflow as tf
-from keras import backend as K
-
-num_cores = 4
-GPU = False
-CPU = True
-
-if CPU:
-    num_CPU = 4
-    num_GPU = 0
-
-config = tf.ConfigProto(intra_op_parallelism_threads=num_cores,\
-        inter_op_parallelism_threads=num_cores, allow_soft_placement=True,\
-        device_count = {'CPU' : num_CPU, 'GPU' : num_GPU})
-session = tf.Session(config=config)
-K.set_session(session)
 
 
 # GETの実装
@@ -67,7 +51,7 @@ def get():
 @api.route('/', methods=['GET'])
 def hello():
     return "hello"
-
+"""
 @api.route('/upload', methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
@@ -90,7 +74,7 @@ def upload():
         return jsonify(data)
 
     return 'Picture info did not get.'
-
+"""
 # エラーハンドリング
 @api.errorhandler(404)
 def not_found(error):
