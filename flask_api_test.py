@@ -47,9 +47,10 @@ all_list = fish_list + ebikani_list + ika_list + kai_list
 # GETの実装
 @route('/get', methods=['GET'])
 def get():
-    return make_response(jsonify(all_list))
+#    return make_response(jsonify(all_list))
+    return print(all_list)
 
-@route('/', methods=['GET'])
+@route('/hello', methods=['GET'])
 def hello():
     return "hello"
 
@@ -69,10 +70,10 @@ def upload():
         Yp = model.predict(X_test)
         predict = np.argmax(Yp)
         name = all_list[predict]
-        data = dict(predict=str(predict), name=str(name))
-        
+#        data = dict(predict=str(predict), name=str(name))
+#        
         #return make_response(jsonify(all_list))
-        return jsonify(data)
+        return name
 
     return 'Picture info did not get.'
 
