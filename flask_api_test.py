@@ -45,11 +45,11 @@ if not os.path.isdir(SAVE_DIR):
     os.mkdir(SAVE_DIR)
 
 # GETの実装
-@api.route('/get', methods=['GET'])
+@api.route('/', methods=['GET'])
 def get():
     return make_response(jsonify(all_list))
 
-@api.route('/upload', methods=['POST'])
+@api.route('/', methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
         img = request.files['image'].read()
