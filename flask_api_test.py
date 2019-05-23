@@ -51,7 +51,7 @@ api = Flask(__name__)
 
 @api.route('/', methods=['GET'])
 def hello():
-    return "hello"
+    return print(hello)
 
 #@api.route('/upload', methods=['POST'])
 #def upload():
