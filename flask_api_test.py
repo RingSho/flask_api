@@ -45,41 +45,41 @@ api = Flask(__name__)
 
 
 # GETの実装
-@api.route('/get', methods=['GET'])
-def get():
-    return make_response(jsonify(all_list))
+#@api.route('/get', methods=['GET'])
+#def get():
+#    return make_response(jsonify(all_list))
 
 @api.route('/', methods=['GET'])
 def hello():
     return "hello"
-"""
-@api.route('/upload', methods=['POST'])
-def upload():
-    if request.files and 'image' in request.files:
-        img = request.files['image'].read()
-        img = Image.open(io.BytesIO(img))
-        img = img.resize((256,144))
-        img_array = np.array(img)
-        
-        X_test = []
-        X_test.append(img_array)
-        X_test = np.asarray(X_test) / 255.
-        model = models.model_vgg(n_class, HEIGHT, WIDTH)
-        model.load_weights("all_weights12_25.h5")
-        Yp = model.predict(X_test)
-        predict = np.argmax(Yp)
-        name = all_list[predict]
-        data = dict(predict=str(predict), name=str(name))
-        
-        #return make_response(jsonify(all_list))
-        return jsonify(data)
 
-    return 'Picture info did not get.'
-"""
-# エラーハンドリング
-@api.errorhandler(404)
-def not_found(error):
-    return make_response(jsonify({'error': 'Not found'}), 404)
+#@api.route('/upload', methods=['POST'])
+#def upload():
+#    if request.files and 'image' in request.files:
+#        img = request.files['image'].read()
+#        img = Image.open(io.BytesIO(img))
+#        img = img.resize((256,144))
+#        img_array = np.array(img)
+#        
+#        X_test = []
+#        X_test.append(img_array)
+#        X_test = np.asarray(X_test) / 255.
+#        model = models.model_vgg(n_class, HEIGHT, WIDTH)
+#        model.load_weights("all_weights12_25.h5")
+#        Yp = model.predict(X_test)
+#        predict = np.argmax(Yp)
+#        name = all_list[predict]
+#        data = dict(predict=str(predict), name=str(name))
+#        
+#        #return make_response(jsonify(all_list))
+#        return jsonify(data)
+#
+#    return 'Picture info did not get.'
+#
+## エラーハンドリング
+#@api.errorhandler(404)
+#def not_found(error):
+#    return make_response(jsonify({'error': 'Not found'}), 404)
 
 # ファイルをスクリプトとして実行した際に
 # ホスト0.0.0.0, ポート3001番でサーバーを起動
