@@ -82,4 +82,4 @@ def not_found(error):
 # ホスト0.0.0.0, ポート3001番でサーバーを起動
 if __name__ == '__main__':
     api.debug = True
-    api.run(host = '0.0.0.0')
+    api.run()
