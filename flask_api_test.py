@@ -47,6 +47,10 @@ api = Flask(__name__)
 def get():
     return make_response(jsonify(all_list))
 
+@api.route('/', methods=['GET'])
+def hello():
+    return "hello"
+
 @api.route('/upload', methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
