@@ -45,11 +45,11 @@ if not os.path.isdir(SAVE_DIR):
     os.mkdir(SAVE_DIR)
 
 # GETの実装
-@api.route('/', methods=['GET'])
+@api.route('/get', methods=['GET'])
 def get():
     return make_response(jsonify(all_list))
 
-@api.route('/', methods=['POST'])
+@api.route('/upload', methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
         img = request.files['image'].read()
@@ -81,5 +81,4 @@ def not_found(error):
 # ファイルをスクリプトとして実行した際に
 # ホスト0.0.0.0, ポート3001番でサーバーを起動
 if __name__ == '__main__':
-    api.debug = True
     api.run()
