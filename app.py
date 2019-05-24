@@ -53,7 +53,7 @@ def hello():
 def get():
     return jsonify(all_list)
 
-@app.route("/", methods=['POST'])
+@app.route("/upload", methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
         img = request.files['image'].read()
