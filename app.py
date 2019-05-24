@@ -8,6 +8,7 @@ Created on Wed May 22 17:40:50 2019
 
 # 必要なモジュールの読み込み
 from flask import Flask
+import os
 
 #import numpy as np
 #from PIL import Image
@@ -74,11 +75,7 @@ def upload():
 
     return 'Picture info did not get.'
 """
-# エラーハンドリング
-#@errorhandler(404)
-#def not_found(error):
-#    return make_response(jsonify({'error': 'Not found'}), 404)
-api.run()
+api.run(host="0.0.0.0", port=int(os.environ.get(“PORT”, 5000)))
 
 
 #run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
