@@ -14,27 +14,27 @@ from flask import Flask, jsonify, make_response, request
 #import models
 #import io
 
-HEIGHT = 144
-WIDTH = 256
-n_class = 12
-
-fish_list = ["akagarei",
-             "hatahata",
-             "etegarei",
-             "kawahagi",
-             "nodoguro",
-             "aji"]
-
-ebikani_list = ["kurozakoebi",
-                "matsubagani"]
-
-ika_list = ["kouika",
-            "surumeika"]
-
-kai_list = ["baigai",
-            "sazae"]
-
-all_list = fish_list + ebikani_list + ika_list + kai_list
+#HEIGHT = 144
+#WIDTH = 256
+#n_class = 12
+#
+#fish_list = ["akagarei",
+#             "hatahata",
+#             "etegarei",
+#             "kawahagi",
+#             "nodoguro",
+#             "aji"]
+#
+#ebikani_list = ["kurozakoebi",
+#                "matsubagani"]
+#
+#ika_list = ["kouika",
+#            "surumeika"]
+#
+#kai_list = ["baigai",
+#            "sazae"]
+#
+#all_list = fish_list + ebikani_list + ika_list + kai_list
 
 
 # Flaskクラスのインスタンスを作成
