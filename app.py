@@ -68,8 +68,8 @@ def upload():
         Yp = model.predict(X_test)
         predict = np.argmax(Yp)
         name = all_list[predict]
-#        data = dict(predict=str(predict), name=str(name))
-        return name
+        data = dict(name=str(name),item_id=str(predict))
+        return jsonify(data)
 
 
     return 'Picture info did not get.'
