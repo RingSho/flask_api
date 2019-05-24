@@ -59,7 +59,7 @@ def upload():
         img = request.files['image'].read()
         img = Image.open(io.BytesIO(img))
         img = img.resize((256,144))
-        img_array = np.array(img)  
+        img_array = np.array(img)
         X_test = []
         X_test.append(img_array)
         X_test = np.asarray(X_test) / 255.
@@ -70,7 +70,7 @@ def upload():
         name = all_list[predict]
 #        data = dict(predict=str(predict), name=str(name))
         return name
-        
+
 
     return 'Picture info did not get.'
 """
@@ -78,10 +78,9 @@ def upload():
 #@errorhandler(404)
 #def not_found(error):
 #    return make_response(jsonify({'error': 'Not found'}), 404)
-if __name__ == '__main__':
-    api.run(debug=True)
-    
-    
+api.run()
+
+
 #run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 # ファイルをスクリプトとして実行した際に
 # ホスト0.0.0.0, ポート3001番でサーバーを起動
