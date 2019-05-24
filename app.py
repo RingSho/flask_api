@@ -75,7 +75,7 @@ def upload():
 
     return 'Picture info did not get.'
 """
-api.run(host="0.0.0.0", port=int(os.environ.get(“PORT”, 5000)))
+api.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
 
 #run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
