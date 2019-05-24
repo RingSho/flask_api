@@ -8,10 +8,11 @@ Created on Wed May 22 17:40:50 2019
 
 # 必要なモジュールの読み込み
 from flask import Flask, jsonify, make_response, request
-import numpy as np
-from PIL import Image
-import models
-import io
+
+#import numpy as np
+#from PIL import Image
+#import models
+#import io
 
 HEIGHT = 144
 WIDTH = 256
@@ -43,14 +44,14 @@ api = Flask(__name__)
 
 
 # GETの実装
-@api.route('/get', methods=['GET'])
-def get():
-    return jsonify(all_list)
-
 
 @api.route('/hello', methods=['GET'])
 def hello():
     return "hello"
+"""
+@api.route('/get', methods=['GET'])
+def get():
+    return jsonify(all_list)
 
 @api.route('/upload', methods=['POST'])
 def upload():
@@ -72,7 +73,7 @@ def upload():
         
 
     return 'Picture info did not get.'
-
+"""
 # エラーハンドリング
 #@errorhandler(404)
 #def not_found(error):
