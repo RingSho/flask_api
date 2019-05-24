@@ -7,7 +7,7 @@ Created on Wed May 22 17:40:50 2019
 """
 
 # 必要なモジュールの読み込み
-from flask import Flask, jsonify, make_response, request
+from flask import Flask
 
 #import numpy as np
 #from PIL import Image
