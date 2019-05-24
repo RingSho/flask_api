@@ -7,34 +7,34 @@ Created on Wed May 22 17:40:50 2019
 """
 
 # 必要なモジュールの読み込み
-from flask import Flask
+from flask import Flask, request, jsonify
 
-#import numpy as np
-#from PIL import Image
-#import models
-#import io
+import numpy as np
+from PIL import Image
+import models
+import io
 
-#HEIGHT = 144
-#WIDTH = 256
-#n_class = 12
-#
-#fish_list = ["akagarei",
-#             "hatahata",
-#             "etegarei",
-#             "kawahagi",
-#             "nodoguro",
-#             "aji"]
-#
-#ebikani_list = ["kurozakoebi",
-#                "matsubagani"]
-#
-#ika_list = ["kouika",
-#            "surumeika"]
-#
-#kai_list = ["baigai",
-#            "sazae"]
-#
-#all_list = fish_list + ebikani_list + ika_list + kai_list
+HEIGHT = 144
+WIDTH = 256
+n_class = 12
+
+fish_list = ["akagarei",
+             "hatahata",
+             "etegarei",
+             "kawahagi",
+             "nodoguro",
+             "aji"]
+
+ebikani_list = ["kurozakoebi",
+                "matsubagani"]
+
+ika_list = ["kouika",
+            "surumeika"]
+
+kai_list = ["baigai",
+            "sazae"]
+
+all_list = fish_list + ebikani_list + ika_list + kai_list
 
 
 # Flaskクラスのインスタンスを作成
@@ -45,15 +45,15 @@ app = Flask(__name__)
 
 # GETの実装
 
-@app.route('/', methods=['GET'])
+@app.route("/", methods=['GET'])
 def hello():
     return "hello"
-"""
-@api.route('/get', methods=['GET'])
+
+@app.route("/get", methods=['GET'])
 def get():
     return jsonify(all_list)
 
-@api.route('/upload', methods=['POST'])
+@app.route("/", methods=['POST'])
 def upload():
     if request.files and 'image' in request.files:
         img = request.files['image'].read()
@@ -73,7 +73,7 @@ def upload():
 
 
     return 'Picture info did not get.'
-"""
+
 if __name__ == "__main__":
     app.run()
 
