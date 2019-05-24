@@ -8,7 +8,6 @@ Created on Wed May 22 17:40:50 2019
 
 # 必要なモジュールの読み込み
 from flask import Flask
-import os
 
 #import numpy as np
 #from PIL import Image
@@ -40,13 +39,13 @@ import os
 
 # Flaskクラスのインスタンスを作成
 # __name__は現在のファイルのモジュール名
-api = Flask(__name__)
+app = Flask(__name__)
 
 
 
 # GETの実装
 
-@api.route('/hello', methods=['GET'])
+@app.route('/', methods=['GET'])
 def hello():
     return "hello"
 """
@@ -75,7 +74,8 @@ def upload():
 
     return 'Picture info did not get.'
 """
-api.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+if __name__ == "__main__":
+    app.run()
 
 
 #run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
