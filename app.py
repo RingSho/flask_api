@@ -71,7 +71,6 @@ def upload():
         data = dict(name=str(name),item_id=str(predict))
         return jsonify(data)
 
-
     return 'Picture info did not get.'
 
 if __name__ == "__main__":
